@@ -1,0 +1,85 @@
+{
+  "info": {
+    "_postman_id": "d26ce88d-3c78-402b-b4da-25178b377a1e",
+    "name": "chucknorris",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53794676",
+    "_collection_link": "https://go.postman.co/collection/53794676-d26ce88d-3c78-402b-b4da-25178b377a1e?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "random",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"comprobar el status 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.chucknorris.io/jokes/random",
+          "protocol": "https",
+          "host": [
+            "api",
+            "chucknorris",
+            "io"
+          ],
+          "path": [
+            "jokes",
+            "random"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "categoria",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"comprobar numero de categorias (16)\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "\r",
+              "    pm.expect(jsonData.length).to.eql(16);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.chucknorris.io/jokes/categories",
+          "protocol": "https",
+          "host": [
+            "api",
+            "chucknorris",
+            "io"
+          ],
+          "path": [
+            "jokes",
+            "categories"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
